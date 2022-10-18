@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lecture 3</title>
+    <script>
+        function handleFile(file){
+            console.log(file);
+        }
+    </script>
+</head>
+<body>
+    <form action="">
+        <label for="firstName">First Name</label>
+        <input id="firstName" autofocus type="text" size="50" name="firstName">
+        <input id="button" type="button" name="button" value="Button" disabled>
+        <input id="checkbox" type="checkbox" checked name="checkbox" value="Checkbox">
+        <input id="date" type="date" name="date"
+            max="2022-10-18" min="2022-10-01"
+        >
+        <label for="email">Email</label>
+        <input id="email" type="email" name="email" required maxlength="20" minlength="10">
+        <br>
+        <input id="file" type="file" name="file" multiple accept="image/*" onchange="handleFile()">
+        <input id="hidden" type="hidden" name="hidden" >
+        <br>
+        Image<input id="image" type="image" name="image" src="../lecture 2/download.jpg" 
+            width="100px" height="100px" alt="Demo">
+        <br>
+        Age<input id= "number" type="number" name="number">
+        <br>
+        Password<input id="password" type="password" name="password">
+        <br>
+        Male <input id="radio" type="radio" name="gender" checked value="Male">
+        Female <input id="radio" type="radio" name="gender" value="Female">
+        <br>
+        Phone number<input id="tel" type="tel" name="tel">
+        <br>
+        <input id="button" type="submit" name="button" value="Submit">
+    </form>
+    <ol type="a" start="10">
+        <li>Prajal</li>
+        <li>Neha</li>
+        <li>Nitin</li>
+        <li>Kranti</li>
+    </ol>
+    <ul>
+        <li>Prajal</li>
+        <li>Neha</li>
+        <li>Nitin</li>
+        <li>Kranti</li>
+    </ul>
+    <select multiple size="6">
+        <optgroup label="Finance team" disabled>
+            <option value="Akash">Akash</option>
+            <option value="Vikram">Vikram</option>
+            <option value="Vikas">Vikas</option>
+        </optgroup>
+        <optgroup label="Dev team">
+            <option value="Neha">Neha</option>
+            <option value="Nitin">Nitin</option>
+            <option value="Kranti">Kranti</option>
+        </optgroup>
+    </select>
+    <p>
+        The Guinness Book of Records lists the longest proper sentence as one from William Faulkner's novel 
+        'Absalom, Absalom!' (1,287 words). <s>Some ancient languages</s> Some latest languages, such as Sanskrit and Greek, did not have 
+        any punctuation. So all their sentences were long! A Polish novel, 'Bramy Raju', contains a 40,000-word 
+        sentence.
+    </p>
+    <p>
+        The Guinness Book of Records lists the longest proper sentence as one from William Faulkner's novel 
+        'Absalom, Absalom!' (1,287 words). <del>Some ancient languages</del> Some latest languages, such as Sanskrit and Greek, did not have 
+        any punctuation. So all their sentences were long! A Polish novel, 'Bramy Raju', contains a 40,000-word 
+        sentence.
+    </p>
+    <span>One of Molly Bloom's soliloquies in James Joyce's epic novel 'Ulysses' features a sentence of 4,491 words.</span>
+    <span>One of Molly Bloom's soliloquies in James Joyce's epic novel 'Ulysses' features a sentence of 4,491 words.</span>
+</body>
+</html>
