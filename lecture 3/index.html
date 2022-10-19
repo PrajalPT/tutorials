@@ -6,15 +6,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lecture 3</title>
     <script>
-        function handleFile(file){
-            console.log(file);
+        if (document.getElementById('file')) {
+            files.addEventListener("change", function (event) {
+                console.log(event);
+            })
+        }
+        function handleFile(){
+            window.files = event
         }
     </script>
 </head>
 <body>
     <form action="">
-        <label for="firstName">First Name</label>
-        <input id="firstName" autofocus type="text" size="50" name="firstName">
+        <!-- <label for="firstName">First Name</label> -->
+        <input id="firstName" placeholder="Enter first name" autofocus type="text" size="50" name="firstName">
         <input id="button" type="button" name="button" value="Button" disabled>
         <input id="checkbox" type="checkbox" checked name="checkbox" value="Checkbox">
         <input id="date" type="date" name="date"
@@ -23,13 +28,13 @@
         <label for="email">Email</label>
         <input id="email" type="email" name="email" required maxlength="20" minlength="10">
         <br>
-        <input id="file" type="file" name="file" multiple accept="image/*" onchange="handleFile()">
+        <input id="file" type="file" name="file" multiple accept="image/*" onclick="handleFile()">
         <input id="hidden" type="hidden" name="hidden" >
         <br>
         Image<input id="image" type="image" name="image" src="../lecture 2/download.jpg" 
             width="100px" height="100px" alt="Demo">
         <br>
-        Age<input id= "number" type="number" name="number">
+        Age<input id= "number" type="number" name="age" min="10" max="100">
         <br>
         Password<input id="password" type="password" name="password">
         <br>
