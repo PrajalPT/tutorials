@@ -1,0 +1,26 @@
+.css-wh {
+    border: 1px solid red;
+    /* max-width: 200px; */
+    /* min-width: 200px; */
+    /* width: 200px;
+    max-width: 180px;
+    height: 200px; */
+}
+
+.container {
+    border: 1px solid blue;
+    display: flex;
+    /* flex-direction: row-reverse; */
+    height: 50vh;
+    /* justify-content: space-evenly; */
+    justify-content: space-between;
+    align-items: center;
+    /* flex-wrap: wrap; */
+    flex-flow: column-reverse wrap;
+}
+
+.fbox {
+    background-color: red;
+    width: 3.5em;
+    height: 3.5em;
+}

@@ -1,0 +1,51 @@
+body{
+    margin: 0;
+    font-size: 10px;
+}
+span {
+    border: 1px solid red;
+    /* display: none; */
+    display: inline;
+    width: 100px;
+    height: 100px;
+}
+
+.border {
+    position: relative;
+    /* border-style: double; */
+    width: 100px;
+    height: 100px;
+    /* border-width: 5px; */
+    /* border-color: blue; */
+    border: 5px double blue;
+    border-top-style: dashed;
+    border-bottom-style: hidden;
+    border-top-color: aqua;
+    border-left-width: 1px;
+    bottom: 1em;
+}
+
+.border-radius {
+    border: 2px solid green;
+    border-radius: 5px 10px;
+}
+
+.margin-css {
+    border: 2px solid aqua;
+    margin: 2em 1em 1em;
+}
+
+.padding-css {
+    position: relative;
+    border: 1px solid brown;
+    width: 200px;
+    height: 100px;
+    /* padding: 1% 2%; */
+    padding-top: 1em;
+}
+
+.text {
+    position: absolute;
+    left: 0;
+    bottom: 40%;
+}
