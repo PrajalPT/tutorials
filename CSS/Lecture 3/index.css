@@ -1,0 +1,67 @@
+body {
+    /* font-size: 10px; */
+}
+
+/* .text-style {
+    color: brown;
+    // direction: rtl;
+    direction: ltr; 
+    text-align: left;
+    text-align-last: left;
+    text-decoration-line: underline;
+    text-decoration-style: dashed;
+    // text-decoration-thickness: 1px;
+    text-transform: lowercase;
+    letter-spacing: 0.2em;
+    line-height: 1em;
+    text-indent: 5em;
+    white-space: normal;
+    text-shadow: 1px 1px 1px black;
+} */
+
+.text-style {
+    color: palevioletred;
+    /* font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; */
+    font-family: 'Sofia';
+    /* font-weight: bold; */
+    font-weight: normal;
+    font-style: oblique;
+    font-variant: normalsdad;
+}
+
+span {
+    vertical-align: super;
+}
+/* unvisited link */
+a:link {
+    color: blueviolet;
+}
+/* visited link */
+a:visited {
+    color: green;
+}
+
+/* hover link */
+a:hover {
+    color: chocolate;
+}
+
+/* active link */
+a:active {
+    color: red;
+}
+
+.div-overflow {
+    width: 100%;
+    height: 100px;
+    /* overflow: scroll; */
+    /* overflow-y: scroll; */
+    overflow-wrap: break-word
+}
+
+img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}

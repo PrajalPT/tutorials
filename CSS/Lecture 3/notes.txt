@@ -1,0 +1,205 @@
+12.Flex:- Flex has two axis main axis(x axis) and cross axis(y axis). 
+	Its 1 dimentional.  
+	* Types of flex properties:-
+		1.flex-direction:-
+			* The flex-direction CSS property sets how flex items are placed in the 
+				flex container.
+			* row (default): left to right in ltr; right to left in rtl
+			* row-reverse: right to left in ltr; left to right in rtl
+			* column: same as row but top to bottom
+			* column-reverse: same as row-reverse but bottom to top
+			For example,
+				.container {
+				  flex-direction: row | row-reverse | column | column-reverse;
+				}
+		2.flex-wrap:-
+			* By default, flex items will all try to fit into one line. You can 
+				change that and allow the items to wrap as needed with this property.
+			* nowrap (default): all flex items will be on one line
+			* wrap: flex items will wrap onto multiple lines, from top to bottom.
+			* wrap-reverse: flex items will wrap onto multiple lines from bottom to 
+				top.
+			For example,
+				.container {
+				  flex-wrap: nowrap | wrap | wrap-reverse;
+				}
+		3.flex-flow:-
+			* This is a shorthand for the flex-direction and flex-wrap properties.
+			* The default value is row nowrap.
+			#write examples based on flex-direction and flex-wrap#
+		4.justify-content:-
+			* This defines the alignment along the main axis.
+			* flex-start (default): items are packed toward the start of the 
+				flex-direction.
+			* flex-end: items are packed toward the end of the flex-direction.
+			* start: items are packed toward the start of the writing-mode direction.
+			* end: items are packed toward the end of the writing-mode direction.
+			* left: items are packed toward left edge of the container, unless that 
+				doesn’t make sense with the flex-direction, then it behaves like start.
+			* right: items are packed toward right edge of the container, unless that
+				doesn’t make sense with the flex-direction, then it behaves like end.
+			* center: items are centered along the line
+			* space-between: items are evenly distributed in the line; first item is 
+				on the start line, last item on the end line
+			* space-around: items are evenly distributed in the line with equal space
+				around them. Note that visually the spaces aren’t equal, since all 
+				the items have equal space on both sides. 
+			* space-evenly: items are distributed so that the spacing between any two
+				items (and the space to the edges) is equal.
+		5.align-items:-
+			* This defines the default behavior for how flex items are laid out along
+			the cross axis on the current line.
+			* normal (default): items are packed in their default position as if no 
+				value was set.
+			* flex-start / start: items packed to the start of the container.
+			* flex-end / end: items packed to the end of the container.
+			* center: items centered in the container.
+			* space-between: items evenly distributed; the first line is at the start of the container 
+							 while the last one is at the end.
+			* space-around: items evenly distributed with equal space around each line.
+			* space-evenly: items are evenly distributed with equal space around them.
+			* stretch: lines stretch to take up the remaining space.
+		6.order:-
+			* The order property controls the order in which they appear in the flex container.
+			* By default, flex items are laid out in the source order.
+		7.flex-grow:-
+			* This defines the ability for a flex item to grow if necessary.
+			* Its default value is 0.
+		8.flex-shrink:-
+			* This defines the ability for a flex item to shrink if necessary.
+			* Its default value is 1.
+		9.flex-basis:-
+			* This defines the default size of an element
+			* Its default value is auto.
+		10.flex:-
+			* This is the shorthand for flex-grow, flex-shrink and flex-basis combined. 
+			* The second and third parameters (flex-shrink and flex-basis) are optional.
+		11.align-self:-
+			* This allows the default alignment (or the one specified by align-items) to be 
+			overridden for individual flex items.
+			* Please see the align-items explanation to understand the available values.
+			E.g:-
+				.item {
+				  align-self: auto | flex-start | flex-end | center | baseline | stretch;
+				}
+		12.gap:-
+			The gap property defines the size of the gap between the rows and columns.
+			gap: row-gap column-gap;
+13.Text:-
+	* Text Color:- The color property is used to set the color of the text. The color is 
+		specified by:-
+	    1.a color name - like "red"
+	    2.a HEX value - like "#ff0000"
+	    3.an RGB value - like "rgb(255,0,0)"
+		For example:-
+			h1 {
+			  color: green;
+			}
+	* Text Direction:- The direction property specifies the text direction/writing 
+		direction within a block-level element.
+		direction: ltr(default)|rtl;
+	* Text Align:- The text-align property specifies the horizontal alignment of text in an 
+		element.
+		text-align: left(default)|right|center|justify;
+	* Text Align Last:- The text-align-last property specifies how to align the last line of 
+		a text.
+		text-align-last: auto(default)|left|right|center|justify|start|end;
+	* Vertical Align:- The vertical-align property sets the vertical alignment of an element.
+		vertical-align: baseline(default)|length|sub|super|top|text-top|middle|bottom|
+						text-bottom;
+	* Text Decoration Line:- The text-decoration-line property sets the kind of text decoration
+		to use (like underline, overline, line-through).
+		text-decoration-line: none(default)|underline|overline|line-through;
+	* Text Decoration Color:- The text-decoration-color property specifies the color of the 
+		text-decoration (underlines, overlines, linethroughs).
+		text-decoration-color: color;
+	* Text Decoration Style:- The text-decoration-style property sets the style of the text 
+		decoration (like solid, wavy, dotted, dashed, double).
+		text-decoration-style: solid(default)|double|dotted|dashed|wavy;
+	* Text Decoration Thickness:- The text-decoration-thickness property specifies the 
+		thickness of the decoration line.
+		text-decoration-thickness: auto(default)|from-font|length/percentage;
+	* Text Decoration:- The text-decoration property specifies the decoration added to text, 
+		and is a shorthand property for:-
+		1.text-decoration-line (required)
+		2.text-decoration-color
+		3.text-decoration-style
+		4.text-decoration-thickness
+	* Text Transformation:- The text-transform property is used to specify uppercase and 
+		lowercase letters in a text.
+		text-transform: none(default)|capitalize|uppercase|lowercase;
+	* Letter Spacing:- The letter-spacing property increases or decreases the space between 
+		characters in a text.
+		letter-spacing: normal(default)|length;
+	* Line Height:- The line-height property specifies the height of a line.
+		line-height: normal(default)|number|length;
+	* Text Indent:- The text-indent property specifies the indentation of the first line in a 
+		text-block.
+		text-indent: length(default is 0);
+	* White Space:- The white-space property specifies how white-space inside an element is 
+		handled.
+		white-space: normal(default)|nowrap|pre|pre-line|pre-wrap;
+	* Text Shadow:- The text-shadow property adds shadow to text.
+		text-shadow: h-shadow v-shadow blur-radius color|none;
+		
+14.Fonts:-
+	* Font Family:- In CSS, we use the font-family property to specify the font of a text.
+		For Example:-
+			.p1 {
+			  font-family: "Times New Roman", Times, serif;
+			}
+	* Font Style:- The font-weight property specifies the weight of a font.
+		For Example:-
+			p.normal {
+			  font-style: normal;//italic,
+			}
+	* Font Size:- The font-size property sets the size of the text.
+		Note: If you do not specify a font size, the default size for normal text, like 
+			paragraphs, is 16px (16px=1em).
+		For Example:-
+			h1 {
+			  font-size: 40px;
+			  /* font-size: 2.5em; 40px/16=2.5em */
+			}
+	* Font Weight:- The font-weight property specifies the weight of a font.
+		For Example:-
+			p.normal {
+			  font-weight: normal;//bold;
+			}
+	* Font Variant:- The font-variant property specifies whether or not a text should be 
+		displayed in a small-caps font.
+		For Example:-
+			p.normal {
+			  font-variant: normal;//small-caps
+			}
+	* Font Google:- If you do not want to use any of the standard fonts in HTML, you can use 
+		Google Fonts.
+		For Example:-
+			<head>
+				<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia">
+				<style>
+				body {
+				  font-family: "Sofia", sans-serif;
+				}
+				</style>
+			</head>
+	* Font Shorthand:- To shorten the code, it is also possible to specify all the individual 
+		font properties in one property.
+		The font property is a shorthand property for:-
+			font-style
+			font-variant
+			font-weight
+			font-size/line-height(required)
+			font-family(required)
+	
+15.Links:- In addition, links can be styled differently depending on what state they are in.
+	The four links states are:-
+		1.a:link - a normal, unvisited link
+		2.a:visited - a link the user has visited
+		3.a:hover - a link when the user mouses over it
+		4.a:active - a link the moment it is clicked
+		
+16.Z Index:- The z-index property specifies the stack order of an element.
+	Note: z-index only works on positioned elements (position: absolute, position: relative, 
+		  position: fixed, or position: sticky) and flex items
+	z-index: auto(default)|number;
