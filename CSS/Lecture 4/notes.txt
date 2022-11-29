@@ -1,0 +1,152 @@
+17.Overflow:- The CSS overflow property controls what happens to content that is 
+	too big to fit into an area.
+	* Overflow:- The overflow property specifies what should happen if content overflows an 
+		element's box.
+		Note: The overflow property only works for block elements with a specified height.
+		overflow: visible(default)|hidden|clip|scroll|auto;
+	* Overflow Wrap:- The overflow-wrap property specifies whether or not the browser can 
+		break lines with long words, if they overflow the container.
+		overflow-wrap: normal|break-word;
+	* Overflow X:- The overflow-x property specifies whether to clip the content, add a scroll
+		bar, or display overflow content of a block-level element, when it overflows at the 3
+		left and right edges.
+		overflow-x: visible(default)|hidden|scroll|auto;
+	* Overflow Y:- The overflow-y property specifies whether to clip the content, add a scroll
+		bar, or display overflow content of a block-level element, when it overflows at the 
+		top and bottom edges.
+		overflow-y: visible(default)|hidden|scroll|auto;
+		
+18.Float:- The CSS float property specifies how an element should float.
+	The float property can have one of the following values:-
+		1.left - The element floats to the left of its container
+		2.right - The element floats to the right of its container
+		3.none - The element does not float (will be displayed just where it occurs in the text). 
+			This is default
+		4.inherit - The element inherits the float value of its parent
+		
+19.Clear:- When we use the float property, and we want the next element below (not on right or
+	left), we will have to use the clear property.
+	The clear property can have one of the following values:-
+		1.none - The element is not pushed below left or right floated elements. This is default
+		2.left - The element is pushed below left floated elements
+		3.right - The element is pushed below right floated elements
+		4.both - The element is pushed below both left and right floated elements
+		
+20.Opacity / Transparency:- The opacity property specifies the opacity/transparency of an 
+	element.
+	For example:-
+		img {
+		  opacity: 0.5;
+		}
+		
+21.Selectors:- CSS selectors are used to "find" (or select) the HTML elements you want to 
+	style. We can divide CSS selectors into five categories:
+	* Simple selectors:-
+		1.id Selector:- The id of an element is unique within a page, so the id selector is 
+			used to select one unique element. Write a hash (#) character, followed by the id 
+			of the element.
+			For example:- 
+				#para1 {
+				  text-align: center;
+				  color: red;
+				}
+		2.class Selector:- To select elements with a specific class, write a period (.) 
+			character, followed by the class name.
+			For example:-
+				.center {
+				  text-align: center;
+				  color: red;
+				}
+		3.Universal Selector:- The universal selector (*) selects all HTML elements on the 
+			page. 
+			For example:-
+				* {
+				  text-align: center;
+				  color: red;
+				}
+		
+	* Combinator selectors (select elements based on a specific relationship between them)
+		There are four different combinators in CSS:-
+			1.descendant selector (space):- The descendant selector matches all elements 
+				that are descendants of a specified element.
+			2.child selector (>):- The child selector selects all elements that are the 
+				children of a specified element.
+			3.adjacent sibling selector (+):- The adjacent sibling selector is used to select 
+				an element that is directly after another specific element.
+			4.general sibling selector (~):- The general sibling selector selects all elements
+				that are next siblings of a specified element.
+
+	* Pseudo-class selectors (select elements based on a certain state)
+	   Selector		  	   Example				   Example description
+		:active				a:active				Selects the active link
+		:checked			input:checked			Selects every checked <input> element
+		:disabled			input:disabled			Selects every disabled <input> element
+		:first-child		p:first-child			Selects every <p> elements that is the 
+														first child of its parent
+		:first-of-type		p:first-of-type			Selects every <p> element that is the 
+														first <p> element of its parent
+		:focus				input:focus				Selects the <input> element that has focus
+		:hover				a:hover					Selects links on mouse over
+		:last-child			p:last-child			Selects every <p> elements that is the 
+														last child of its parent
+		:link				a:link					Selects all unvisited links
+		:not(selector)		:not(p)					Selects every element that is not a <p> 
+														element
+		:nth-child(n)		p:nth-child(2)			Selects every <p> element that is the 
+														second child of its parent
+		:nth-last-child(n)	p:nth-last-child(2)		Selects every <p> element that is the 
+														second child of its parent, counting
+														from the last child
+		:required			input:required			Selects <input> elements with a "required" 
+														attribute specified
+		
+	* Pseudo-elements selectors (select and style a part of an element)
+	   Selector		   Example		   Example description
+		::after			p::after		Insert something after the content of each <p> element
+		::before		p::before		Insert something before the content of each <p> element
+		::selection		p::selection	Selects the portion of an element that is selected by a 
+										user
+	* Attribute selectors (select elements based on an attribute or attribute value)
+	   Selector			   	   Example				   Example description
+		[attribute]				[target]				Selects all elements with a target 
+															attribute
+		[attribute=value]		[target=_blank]			Selects all elements with 
+															target="_blank"
+		[attribute~=value]		[title~=flower]			Selects all elements with a title 
+															attribute containing the word 
+															"flower"
+		[attribute|=value]		[lang|=en]				Selects all elements with a lang 
+															attribute value starting with "en"
+		[attribute^=value]		a[href^="https"]		Selects every <a> element whose href 
+															attribute value begins with "https"
+		[attribute$=value]		a[href$=".pdf"]			Selects every <a> element whose href 
+															attribute value ends with ".pdf"
+		[attribute*=value]		a[href*="w3schools"]	Selects every <a> element whose href 
+															attribute value contains the 
+															substring "w3schools"
+		
+22.Specificity Hierarchy:-
+	There are four categories which define the specificity level of a selector:-
+		1.Inline styles - Example: <h1 style="color: pink;">
+		2.IDs - Example: #navbar
+		3.Classes, pseudo-classes, attribute selectors - Example: .test, :hover, [href]
+		4.Elements and pseudo-elements - Example: h1
+		
+23.!important:- The !important rule in CSS is used to add more importance to a property/value 
+	than normal.If you use the !important rule, it will override ALL previous styling rules 
+	for that specific property on that element!
+	For example:-
+		.myclass {
+		  background-color: gray;
+		}
+		p {
+		  background-color: red !important;
+		}
+
+24.Math Functions:- The CSS math functions allow mathematical expressions to be used as property
+	values. Here, we will explain the calc(), max() and min() functions.
+	* calc():- The calc() function performs a calculation to be used as the property value.
+	* max():- The max() function uses the largest value, from a comma-separated list of values,
+		as the property value.
+	* min():- The min() function uses the smallest value, from a comma-separated list of 
+	values, as the property value.

@@ -1,0 +1,96 @@
+body {
+    margin: 0;
+}
+.overflow-div {
+    width: 100px;
+    height: 100px;
+    overflow: scroll;
+    /* overflow-x: scroll; */
+    /* overflow-y: scroll */
+    /* overflow-wrap: break-word */
+}
+
+/* .img-div {
+    float: left;
+    opacity: 0.5;
+} */
+
+#img-div {
+    float: left;
+    opacity: 1;
+}
+
+.div-text {
+    clear: left;
+}
+
+* {
+    /* text-align: center; */
+    color: red;
+}
+
+.div1-descent p {
+    background-color: blue;
+}
+
+.div2-child > p {
+    background-color: blueviolet;
+}
+
+.div3-adj-sibling + p {
+    background-color: aqua;
+}
+
+.div4-general-sibling ~ p {
+    background-color: rebeccapurple;
+}
+
+a:active {
+    background-color: crimson;
+}
+
+/* a:hover {
+    background-color: pink;
+} */
+
+input[type="radio"]:checked {
+    width: 20px;
+    height: 20px;
+}
+
+input[type="text"]:disabled {
+    background-color: grey;
+}
+
+a[href^="https"] {
+    width: 20px;
+    height: 20px;
+}
+
+.div-class-selector p:nth-last-child(1) {
+        background-color: black;
+}
+
+/* .div-element-selector p::after {
+    content: 'Please select ';
+} */
+
+.div-element-selector p::selection {
+   background-color: blueviolet;
+}
+
+
+.div-specificity {
+    background-color: chocolate;
+}
+
+section div {
+    background-color: aqua !important;
+}
+
+.div-math {
+    border: 1px solid red;
+    width: calc(100% - 100px);
+    /* height: max(50vh, 10vh, 100px); */
+    height: min(50vh, 100vh, 1000px);
+}
