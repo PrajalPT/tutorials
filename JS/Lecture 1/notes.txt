@@ -1,0 +1,62 @@
+JavaScript 35%-40% interview question
+
+* JavaScript is the world's most popular programming language.
+* JavaScript is the programming language of the Web.
+* ECMAScript is a Standard for scripting languages such as JavaScript, JScript, etc. 
+  The full form of ECMA is European Computer Manufacturer's Association.
+  It is a trademark scripting language specification. JavaScript is a language based 
+  on ECMAScript. 
+* You don't have to get or download JavaScript.
+* JavaScript is already running in your browser on your computer, on your tablet, and on 
+  your smart-phone.
+* JavaScript is free to use for everyone.
+* JavaScript is a synchronus language means only one thread is executing the code.
+
+1.Data types
+	* Primitive values
+		1.Boolean:- Boolean represents a logical entity and can have two values: true and 
+		  false. 
+		2.null:- The Null type has exactly one value: null
+		3.Undefined:- A variable that has not been assigned a value has the value undefined.
+		4.Number:- The Number type is used to store floating and Interger values including 
+		  +ve and -ve numbers.
+		5.NaN(Not a Number):- NaN ("Not a Number") is typically encountered when the result 
+		  of an arithmetic operation cannot be expressed as a number.
+		6.String:- JavaScript's String type is used to represent textual data. It is a set of 
+		  "elements" of 16-bit unsigned integer values. Each element in the String occupies a 
+		  position in the String. The first element is at index 0, the next at index 1, 
+		  and so on.
+				   
+		Note:- When you declare a primitive data type in JavaScript, it is stored on a stack. 
+		       A stack is a simple data structure that the computer uses to store and 
+			   retrieve data quickly.
+	* Non Primitive values
+		1.Object/Array/Function:- Variables that are assigned a non-primitive value are given 
+		  a reference to that value. That reference points to the object’s location in memory. 
+		  The variables don’t actually contain the value. 
+		
+		Note:- Whenever a non-primitive data type is defined, it refers a memory location 
+			   where the data is stored in heap memory i.e., it refers to the memory location
+			   where an object is placed.
+
+2.Variables
+	* Variables are containers for storing data (storing data values).
+	* The var keyword is used in all JavaScript code from 1995 to 2015.
+	* The let and const keywords were added to JavaScript in 2015(ES6).
+	
+	#Show image of difference between var vs let vs const#
+	
+	* Hoisting:- Variable can be used before it has been declared.
+	* Shadowing:-
+		function func() {
+			var a = 'Geeks';//lexical scope
+			let b = 'Geeks;
+			 
+			if (true) {
+				var a = 'GeeksforGeeks'; // Shadowing
+				console.log(a); // It will print 'GeeksforGeeks'
+				console.log(b); // It will print error
+			}
+			console.log(a); // It will print 'GeeksforGeeks'
+		}
+		func();
