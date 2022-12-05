@@ -1,0 +1,186 @@
+3.Comparison Operators
+	* Comparison operators are used in logical statements to determine equality or 
+		difference between variables or values.
+	x = 5
+	Operator	Description							Comparing	Returns
+	 ==			 equal to	 			  	 		 x == 8		 false	
+													 x == 5		 true	
+													 x == "5"	 true
+	 ===		 equal value and equal type	 		 x === 5	 true	
+													 x === "5"	 false
+	 !=			 not equal					 		 x != 8		 true	
+	 !==		 not equal value or not equal type	 x !== 5	 false	
+													 x !== "5"	 true	
+													 x !== 8	 true
+	 >			 greater than						 x > 8		 false	
+	 <			 less than							 x < 8		 true	
+	 >=			 greater than or equal to			 x >= 8	 	 false	
+	 <=			 less than or equal to				 x <= 8		 true
+	
+4.Switch Statement
+	* Use the switch statement to select one of many code blocks to be executed.
+	* The default keyword specifies the code to run if there is no case match.
+	
+	switch(expression) {
+	  case x:
+		// code block
+		break;
+	  case y:
+		// code block
+		break;
+	  default:
+		// code block
+	}
+	
+	switch(expression) {
+	  case x:
+		// code block
+		break;
+	  case y:
+	  case z:
+		// code block
+		break;
+	  default:
+		// code block
+	}
+
+5.Loops:-
+	* for:- Loops through a block of code a number of times
+		for (expression 1; expression 2; expression 3) {
+			// code block to be executed
+		}
+	
+	* for/in:- Loops through the properties of an object
+		for (key in object) {
+			// code block to be executed
+		}
+		
+	* for/of:- Loops through the values of an iterable object. It lets you loop over iterable 
+		data structures such as Arrays, Strings, Maps, Set etc.
+		for (variable of iterable) {
+			// code block to be executed
+		}
+		
+	* while:- Loops through a block of code while a specified condition is true.
+		while (condition) {
+			// code block to be executed
+		}
+		
+	* do/while:- This loop will execute the code block once, before checking the 
+		condition.
+		do {
+			// code block to be executed
+		}while (condition);
+		
+6.this keyword:- In JavaScript, the this keyword refers to an object. Which object 
+	depends on, how this is being invoked (used or called).
+	1. How this work in object literal?
+	2. How this work inside function?
+	3. How this work in global scope?
+	
+7.call, apply and bind:- 
+	* call:- With the call() method, you can write a method that can be used on 
+		different objects. 
+		call(thisArg, arg1, /* …, */ argN)
+	* apply:- The apply() method calls the specified function with a given this value, 
+		and arguments provided as an array. 
+		apply(thisArg, argsArray)
+	* bind:- The bind() method creates a new function that, when called, has its this 
+		keyword set to the provided value, with a given sequence of arguments 
+		preceding any provided when the new function is called.
+		bind(thisArg, arg1, arg2, /* …, */ argN)
+	
+8.Different way of writing a function:-
+	* Pure Functions:- The same input parameters will give the same deterministic output 
+		regardless of how many times you run the function. Pure functions do not have an 
+		internal state.
+		For example:- 
+			function add(a,b) { 
+			  return a + b
+			}
+			console.log(add(4,5))
+	* Impure Functions:- The same input parameters won't give the same deterministic output 
+		regardless of how many times you run the function.It mutates data outside of its 
+		lexical scope.
+		For example:-
+			var addNew = 0;
+
+			function add(a,b){ 
+			  addNew =1; 
+			  return a + b + addNew
+			}
+			console.log(add(4,5))
+	* Function Expression:- Its nothing but assigning a function to a variable.
+		For example:-
+			var greet = function () {
+			  console.log("Welcome to Javascript");
+			};
+			greet();
+	* Anonymous Function:- It is function without a name.
+		For example:-
+			function () {
+			  // function body
+			}
+	* Named Function Expression:- Its nothing but assigning a function to a variable.
+		For example:-
+			var greet = function print() {
+			  console.log("Welcome to Javascript");
+			};
+			greet();
+	* Immediately Invoked Function Expressions:- Its nothing but a anonymous function, 
+		when you want to execute a function immediately after the declaration.
+		For example:-
+			(function () {
+				console.log("Welcome to Javascript");
+			})();
+	* Constructor Function:- The concept of a function constructor is to create a function 
+		It can be used to create multiple objects that are similar. Object which executes 
+		in the global scope. A constructor function is called with the "new" keyword to 
+		create an object. Function constructor dosen't return any value, because of 
+		"new" keyword.
+		For example:-
+			var Person = function (name, age) {
+				this.name = name;
+				this.age = age;
+			};
+
+			// Create first object instance
+			const person1 = new Person("Anita", 12);
+			// Create second object instance
+			const person2 = new Person("Sunita", 10);
+	* Named Arrow Function:- In arrow function, the this keyword always represents the 
+		object that defined the arrow function, with arrow functions there are no binding
+		of this.In regular functions the this keyword represented the object that called 
+		the function, which could be the window object or whatever.
+		For example:-
+			let name = (para1, para2, para3...) => {
+				statements
+			};
+	* Anonymous Arrow Function:- It is similar to named arrow function, but the difference
+		is a arrow function without any name.
+		For example:-
+			setTimeout(() => {
+				console.log("Anonymous Arrow Function")
+			}, 1000)//print the log after 1 sec.
+			
+	* First-class Function:- A programming language is said to have First-class functions 
+		when functions in that language are treated like any other variable. For example, 
+		in such a language, a function can be passed as an argument to other functions, 
+		can be returned by another function and can be assigned as a value to a variable.
+		For example:-
+			const foo = () => {
+			  console.log("foobar");
+			};
+			foo(); // Invoke it using the variable
+			// foobar
+	
+	* Higher Order Function:- Higher-Order-Function, is a function that takes a function 
+		as an argument and returns a function.
+		For example:-
+			// HOF
+			function f(x) {
+			  // HOF
+			  return function(y) {
+				return function(x) {}
+			  }
+			}
