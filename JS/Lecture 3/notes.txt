@@ -1,0 +1,127 @@
+9.Closures:- A closure is the combination of a function bundled together (enclosed) with 
+	references to its surrounding state (the lexical environment). In other words, a 
+	closure gives you access to an outer function's scope from an inner function.
+	For example:-
+		function makeFunc() {
+		  const name = 'Mozilla';
+		  function displayName() {
+			console.log(name);
+		  }
+		  return displayName;
+		}
+
+		const myFunc = makeFunc();
+		myFunc();
+
+
+10. ES6 features:-
+	* Constants:- Support for constants (also known as "immutable variables"), i.e., 
+		variables which cannot be re-assigned new content. Block-scoped variables without 
+		hoisting.
+		For example:-
+			const PI = 3.141593
+	* Block-Scoped Variables and Functions:- User can create a variable by using let 
+		keyword. You can't give same variable name within same scope. Block-scoped 
+		variables without hoisting.
+		For example:-
+			//Block-Scoped Variables
+			for (let i = 0; i < a.length; i++) {
+				let x = a[i]
+			}
+			//Block-Scoped Functions
+			{
+				function foo () { return 1 }
+			}
+	* Arrow Function:- It allows you to create functions in a cleaner way compared to 
+		regular functions. With arrow functions the this keyword always represents the 
+		object that defined the arrow function.
+		For example:-
+			let myFunction = (arg1, arg2, ...argN) => {
+				statement(s)
+			}
+	* Default Parameter Values:- Simple and intuitive default values for function 
+		parameters.
+		For example:-
+			function f (x, y = 7, z = 42) {
+				return x + y + z
+			}
+			f(1) === 50
+	* Rest Parameter:- Aggregation of remaining arguments into single parameter of 
+		functions.
+		For example:-
+			function f (x, y, ...a) {
+				return (x + y) * a.length
+			}
+			f(1, 2, "hello", true, 7) === 9
+	* Spread Operator:- Spreading of elements of an iterable collection (like an array or 
+		even a string) into both literal elements and individual function parameters.
+		For example:-
+			var params = [ "hello", true, 7 ]
+			var other = [ 1, 2, ...params ] // [ 1, 2, "hello", true, 7 ]
+
+			function f (x, y, ...a) {
+			return (x + y) * a.length
+			}
+			f(1, 2, ...params) === 9
+
+			var str = "foo"
+			var chars = [ ...str ] // [ "f", "o", "o" ]
+	* String Interpolation:- Intuitive expression interpolation for single-line and 
+		multi-line strings.
+		For example:-
+			var customer = { name: "Foo" }
+			var message = `Hello ${customer.name}`
+	* Property Shorthand:- Shorter syntax for common object property definition idiom.
+		For example:-
+			var x = 0, y = 0
+			obj = { x, y }
+	* Computed Property Names:- Support for computed names in object property definitions.
+		For example:-
+			let obj = {
+				foo: "bar",
+				[ "baz" + quux() ]: 42
+			}
+	* Array Matching:- Intuitive and flexible destructuring of Arrays into individual 
+		variables during assignment.
+		For example:-
+			var list = [ 1, 2, 3 ]
+			var [ a, , b ] = list
+			[ b, a ] = [ a, b ]
+	* Object Matching, Shorthand Notation:- Intuitive and flexible destructuring of 
+		Objects into individual variables during assignment.
+		For example:-
+			var { op, lhs, rhs } = getASTNode()
+	* Object Matching, Deep Matching:- Intuitive and flexible destructuring of Objects 
+		into individual variables during assignment at nested object level.
+		For example:-
+			var { op: a, lhs: { op: b }, rhs: c } = getASTNode()
+	* Object And Array Matching, Default Values:- Simple and intuitive default values for 
+		destructuring of Objects and Arrays.
+		For example:-
+			var obj = { a: 1 }
+			var list = [ 1 ]
+			var { a, b = 2 } = obj
+			var [ x, y = 2 ] = list
+	* Parameter Context Matching:- Intuitive and flexible destructuring of Arrays and 
+		Objects into individual parameters during function calls.
+		For example:-
+			function f ([ name, val ]) {
+				console.log(name, val)
+			}
+			function g ({ name: n, val: v }) {
+				console.log(n, v)
+			}
+			function h ({ name, val }) {
+				console.log(name, val)
+			}
+			f([ "bar", 42 ])
+			g({ name: "foo", val:  7 })
+			h({ name: "bar", val: 42 })
+	* Fail-Soft Destructuring:- Fail-soft destructuring, optionally with defaults.
+		For example:-
+			var list = [ 7, 42 ]
+			var [ a = 1, b = 2, c = 3, d ] = list
+			a === 7
+			b === 42
+			c === 3
+			d === undefined
