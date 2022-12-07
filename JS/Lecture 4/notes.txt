@@ -1,0 +1,266 @@
+	* Value Export/Import:- Support for exporting/importing values from/to modules without 
+		global namespace pollution.
+		For example:-
+			//  lib/math.js
+			export function sum (x, y) { return x + y }
+			export var pi = 3.141593
+
+			//  someApp.js
+			import * as math from "lib/math"
+			console.log("2π = " + math.sum(math.pi, math.pi))
+
+			//  otherApp.js
+			import { sum, pi } from "lib/math"
+			console.log("2π = " + sum(pi, pi))
+	* Default & Wildcard:- Marking a value as the default exported value and mass-mixin of 
+		values.
+		For example:-
+			//  lib/mathplusplus.js
+			export * from "lib/math"
+			export var e = 2.71828182846
+			export default (x) => Math.exp(x)
+
+			//  someApp.js
+			import exp, { pi, e } from "lib/mathplusplus"
+			console.log("e^{π} = " + exp(pi))
+	* Class Definition:- 
+		For example:-
+			class Shape {
+				constructor (id, x, y) {
+					this.id = id
+					this.move(x, y)
+				}
+				move (x, y) {
+					this.x = x
+					this.y = y
+				}
+			}
+	* Class Inheritance:-
+		For example:-
+			class Rectangle extends Shape {
+				constructor (id, x, y, width, height) {
+					super(id, x, y)
+					this.width  = width
+					this.height = height
+				}
+			}
+			class Circle extends Shape {
+				constructor (id, x, y, radius) {
+					super(id, x, y)
+					this.radius = radius
+				}
+			}
+	* Static Methods:- 
+		For example:-
+			class Rectangle extends Shape {
+				…
+				static defaultRectangle () {
+					return new Rectangle("default", 0, 0, 100, 100)
+				}
+			}
+			class Circle extends Shape {
+				…
+				static defaultCircle () {
+					return new Circle("default", 0, 0, 100)
+				}
+			}
+			var defRectangle = Rectangle.defaultRectangle()
+			var defCircle    = Circle.defaultCircle()
+	* Generator Function, Direct Use:- Support for generator functions, a special variant 
+		of functions where the control flow can be paused and resumed, in order to produce 
+		sequence of values (either finite or infinite).
+		For example:-
+			function* range (start, end, step) {
+				while (start < end) {
+					yield start;
+					start += step;
+				}
+			}
+
+			for (let i of range(0, 10, 2)) {
+				console.log(i); // 0, 2, 4, 6, 8
+			}
+	* Set Data-Structure:- Its hold collection of unique set of values.
+		For example:-
+			let s = new Set();
+			s.add("hello").add("goodbye").add("hello");
+			s.size === 2;
+			s.has("hello") === true;
+			for (let key of s.values()) // insertion order
+				console.log(key);
+	* Map Data-Structure:- Its hold collection in key and value format. For different value, 
+		key should be unique otherwise previous value which stored under the key gets override.
+		For example:-
+			let m = new Map();
+			let s = Symbol();
+			m.set("hello", 42);
+			m.set(s, 34);
+			m.get(s) === 34;
+			m.size === 2;
+			for (let [ key, val ] of m.entries())
+				console.log(key + " = " + val);
+	* Array Element Finding:- New function for finding an element in an array.
+		For example:-
+			[ 1, 3, 4, 2 ].find(x => x > 3) // 4
+			[ 1, 3, 4, 2 ].findIndex(x => x > 3) // 2
+	* Number Type Checking:- New functions for checking for non-numbers and finite 
+		numbers.
+		For example:-
+			Number.isNaN(42) === false
+			Number.isNaN(NaN) === true
+
+			Number.isFinite(Number.POSITIVE_INFINITY) === false
+			Number.isFinite(Number.NEGATIVE_INFINITY) === false
+			Number.isFinite(NaN) === false
+			Number.isFinite(123) === true
+	* Promise:- The Promise object represents the eventual completion (or failure) of
+		an asynchronous operation and its resulting value.
+		A JavaScript Promise object can be:
+			Pending
+			Fulfilled
+			Rejected
+			The Promise object supports two properties: state and result.
+		While a Promise object is "pending" (working), the result is undefined.
+		When a Promise object is "fulfilled", the result is a value.
+		When a Promise object is "rejected", the result is an error object.
+		
+		#Please see an image of promise flow#
+		
+		* Promise Methods:-
+			1. Promise.prototype.then():- Promise takes 
+				up to two arguments: callback functions for the fulfilled and 
+				rejected cases of the Promise. If promise gets executed successfully 
+				then call "resolve" callback else "reject" callback. In then method we 
+				call resolve callback after successfully execution of promise.
+				For example:-
+					const promise1 = new Promise((resolve, reject) => {
+					  resolve('Success!');
+					});
+
+					promise1.then((value) => {
+					  console.log(value);
+					  // expected output: "Success!"
+					});	
+			2.Promise.prototype.catch():- The catch() method returns a Promise and 
+				deals with rejected cases only. 
+				For example:-
+					const promise1 = new Promise((resolve, reject) => {
+					  throw 'Uh-oh!';
+					});
+
+					promise1.catch((error) => {
+					  console.error(error);
+					});
+					// expected output: Uh-oh!
+			3.Promise.prototype.finally():- The finally() method of a Promise schedules
+				a function, the callback function, to be called when the promise is 
+				settled. Like then() and catch().
+				For example:-
+					function checkMail() {
+					  return new Promise((resolve, reject) => {
+						if (Math.random() > 0.5) {
+						  resolve('Mail has arrived');
+						} else {
+						  reject(new Error('Failed to arrive'));
+						}
+					  });
+					}
+
+					checkMail()
+					.then((mail) => {
+						console.log(mail);
+					})
+					.catch((err) => {
+						console.error(err);
+					})
+					.finally(() => {
+						console.log('Experiment completed');
+					});
+			4.Promise.reject():- The Promise.reject() method returns a Promise object
+				that is rejected with a given reason.
+				For example:-
+					function resolved(result) {
+					  console.log('Resolved');
+					}
+
+					function rejected(result) {
+					  console.error(result);
+					}
+
+					Promise.reject(new Error('fail')).then(resolved, rejected);
+					// expected output: Error: fail
+			5.Promise.resolve():- The Promise.resolve() method "resolves" a given 
+				value to a Promise. If the value is a promise, that promise is 
+				returned; if the value is a thenable, Promise.resolve() will call 
+				the then() method.
+				For example:-
+					const promise1 = Promise.resolve(123);
+					promise1.then((value) => {
+					  console.log(value);
+					  // expected output: 123
+					});
+			6.Promise.all():- The Promise.all() method takes an iterable of promises 
+				as input and returns a single Promise. This returned promise fulfills
+				when all of the input's promises fulfill. 
+				It rejects when any of the input's promises rejects, with this first 
+				rejection reason.
+				For example:-
+					const promise1 = Promise.resolve(3);
+					const promise2 = 42;
+					const promise3 = new Promise((resolve, reject) => {
+					  setTimeout(resolve, 100, 'foo');
+					});
+
+					Promise.all([promise1, promise2, promise3]).then((values) => {
+					  console.log(values);
+					});
+					// expected output: Array [3, 42, "foo"]
+			7.Promise.allSettled():- The Promise.allSettled() method takes an iterable
+				of promises as input and returns a single Promise. This returned 
+				promise fulfills when all of the input's promises settle.
+				For example:-
+					const promise1 = Promise.resolve(3);
+					const promise2 = new Promise((resolve, reject) => 
+						setTimeout(reject, 100, 'foo'));
+					const promises = [promise1, promise2];
+
+					Promise.allSettled(promises).
+					  then((results) => results.forEach((result) => console.log(result.status)));
+
+					// expected output:
+					// "fulfilled"
+					// "rejected"
+			8.Promise.any():- The Promise.any() method takes an iterable of promises 
+				as input and returns a single Promise. This returned promise fulfills
+				when any of the input's promises fulfills, with this first 
+				fulfillment value. It rejects when all of the input's promises 
+				reject.
+				For example:-
+					const promise1 = Promise.reject(0);
+					const promise2 = new Promise((resolve) => setTimeout(resolve, 100, 'quick'));
+					const promise3 = new Promise((resolve) => setTimeout(resolve, 500, 'slow'));
+
+					const promises = [promise1, promise2, promise3];
+
+					Promise.any(promises).then((value) => console.log(value));
+
+					// expected output: "quick"
+			9.Promise.race():- The Promise.race() method takes an iterable of promises
+				as input and returns a single Promise. This returned promise settles 
+				with the eventual state of the first promise that settles.
+				For example:-
+					const promise1 = new Promise((resolve, reject) => {
+					  setTimeout(resolve, 500, 'one');
+					});
+
+					const promise2 = new Promise((resolve, reject) => {
+					  setTimeout(resolve, 100, 'two');
+					});
+
+					Promise.race([promise1, promise2]).then((value) => {
+					  console.log(value);
+					  // Both resolve, but promise2 is faster
+					});
+					// expected output: "two"
+
+	For more features see this link http://es6-features.org/#PromiseUsage
