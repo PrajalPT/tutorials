@@ -1,0 +1,220 @@
+			8.Promise.any():- The Promise.any() method takes an iterable of promises 
+				as input and returns a single Promise. This returned promise fulfills
+				when any of the input's promises fulfills, with this first 
+				fulfillment value. It rejects when all of the input's promises 
+				reject.
+				For example:-
+					const promise1 = Promise.reject(0);
+					const promise2 = new Promise((resolve) => setTimeout(resolve, 100, 'quick'));
+					const promise3 = new Promise((resolve) => setTimeout(resolve, 500, 'slow'));
+
+					const promises = [promise1, promise2, promise3];
+
+					Promise.any(promises).then((value) => console.log(value));
+
+					// expected output: "quick"
+			9.Promise.race():- The Promise.race() method takes an iterable of promises
+				as input and returns a single Promise. This returned promise settles 
+				with the eventual state of the first promise that settles.
+				For example:-
+					const promise1 = new Promise((resolve, reject) => {
+					  setTimeout(resolve, 500, 'one');
+					});
+
+					const promise2 = new Promise((resolve, reject) => {
+					  setTimeout(resolve, 100, 'two');
+					});
+
+					Promise.race([promise1, promise2]).then((value) => {
+					  console.log(value);
+					  // Both resolve, but promise2 is faster
+					});
+					// expected output: "two"
+
+	For more features see this link http://es6-features.org/#PromiseUsage
+				
+11.Async JS:-
+	* Callbacks:- JavaScript functions are executed in the sequence they are called. 
+		Not in the sequence they are defined.
+		For example:-
+			function myDisplayer(some) {
+			  console.log(some);
+			}
+
+			function myFirst() {
+			  myDisplayer("Hello");
+			}
+
+			function mySecond() {
+			  myDisplayer("Goodbye");
+			}
+
+			myFirst();
+			mySecond();
+	* Asynchronous JavaScript:- 
+		1. setTimeout and cleatTimeout:- When using the JavaScript function setTimeout(), 
+			you can specify a callback function to be executed on time-out. The id 
+			returned from setTimeout(). To clear a timeout, use the id returned from 
+			setTimeout().
+			For example:-
+				let timeoutId = setTimeout(myFunction, 3000);
+
+				function myFunction() {
+				  console.log("Hello world !!");
+				}
+				cleatTimeout(timeoutId);
+		2. setInterval and clearInterval:- When using the JavaScript function setInterval()
+			, you can specify a callback function to be executed for each interval. The 
+			id returned from setInterval(). To clear an interval, use the id returned 
+			from setInterval().
+			For example:-
+				let myInterval = setInterval(function, milliseconds);
+				clearInterval(myInterval);
+		3. async and await:- The keyword async before a function makes the function return
+			a promise. The await keyword can only be used inside an async function. The 
+			await keyword makes the function pause the execution and wait for a resolved 
+			promise before it continue.
+			For example:-
+				async function myDisplay() {
+				  let myPromise = new Promise(function(resolve) {
+					setTimeout(function() {resolve("Hello world !!");}, 3000);
+				  });
+				  console.log(await myPromise);
+				}
+				myDisplay();
+		4. fetch api:- The Fetch API provides a JavaScript interface for accessing and 
+			manipulating parts of the protocol, such as requests and responses.
+			For example:-
+				// Example POST method implementation:
+				async function postData(url = '', data = {}) {
+				  // Default options are marked with *
+				  const response = await fetch(url, {
+					method: 'POST', // *GET, POST, PUT, DELETE, etc.
+					mode: 'cors', // no-cors, *cors, same-origin
+					cache: 'no-cache', // *default, no-cache, reload, force-cache, only-if-cached
+					credentials: 'same-origin', // include, *same-origin, omit
+					headers: {
+					  'Content-Type': 'application/json'
+					  // 'Content-Type': 'application/x-www-form-urlencoded',
+					},
+					redirect: 'follow', // manual, *follow, error
+					referrerPolicy: 'no-referrer', // no-referrer, *no-referrer-when-downgrade, origin, origin-when-cross-origin, same-origin, strict-origin, strict-origin-when-cross-origin, unsafe-url
+					body: JSON.stringify(data) // body data type must match "Content-Type" header
+				  });
+				  return response.json(); // parses JSON response into native JavaScript objects
+				}
+
+				postData('https://example.com/answer', { answer: 42 })
+				.then((data) => {
+					console.log(data); // JSON data parsed by `data.json()` call
+				});
+		
+12.Error and its types:-
+	* What are Errors in JavaScript?:- JavaScript code can encounter different errors
+		when it is executed. Errors can be caused by programming mistakes, incorrect 
+		input, or other unforeseeable events.
+		Errors in programming can be divided into two types. These are:-
+			1. Program Error: - In this case, the program might need to handle this 
+				error through its error handlers. An example could be network 
+				disconnection, timeout error, etc.
+			2. Developer Error: - The programmer has caused an error. It can be a 
+				syntax error, a logical error, a semantic error, etc.
+	* Exception handling:- Exception handling has been added to JavaScript in recent 
+		versions. Exceptions are handled by JavaScript's try...catch...finally 
+		construct and throw operator.
+		Syntax
+			try {
+				// statements
+				[break;]
+			} 
+
+			catch ( e ) {
+				// statements if an exception occurs
+				[break;]
+			}
+
+			finally {
+				// statements that always execute regardless of an exception 
+				occurring
+			}
+		Examples of errors in JavaScript:- The throw statement can be used to raise 
+			built-in exceptions or your customized ones.
+		
+		function myFunc() {
+			var num1 = 100;
+			var num2 = 0;
+					   
+			try {
+				if ( num2 == 0 ) {
+					throw( "Divide by zero error." );  //exception
+					console.error(new Error("Divide by zero error.")); //log an error
+				} else {
+					var num3 = num1 / num2;
+				}
+			}
+			catch ( e ) {
+				alert("Error: " + e );
+			}
+		}
+		myFunc();
+	* Types of Error:-
+		1. Syntax error - The error occurs when you use a predefined syntax 
+			incorrectly.
+			For example:-
+				const func = () =>
+					console.log(hello)
+				}
+				^
+				SyntaxError: Unexpected token }
+		2. Reference Error - In a case where a variable reference can't be found or 
+			hasn't been declared, then a Reference error occurs.
+			For example:-
+				console.log(x);
+							^
+						ReferenceError: x is not defined
+		3. Type Error - An error occurs when a value is used outside the scope of its
+			data type.
+			For example:-
+				let num = 15;
+				console.log(num.split("")); //converts a number to an array
+								^
+							TypeError: num.split is not a function
+
+13.Event Loop:- JavaScript has a runtime model based on an event loop, which is 
+	responsible for executing the code, collecting and processing events, and 
+	executing queued sub-task. Terminologies in event loop are:-
+		* Tasks : any block of code (literally)
+		* Browser APIs : APIs that usually start their own threads to run code 
+			parallelly ( most of them requires a callback which will later on be pushed to the event queue )
+		* Micro Tasks : any callback related to a promise
+		* rendering process : anything related to rendering such as style calculation,
+			or any requestAnimationFrame callback
+		* call stack : a mechanism for an interpreter to keep track of its place in 
+			a script that calls multiple functions ( what function is currently being
+			run and what function initially called it ).
+		* Heap : an area of pre-reserved computer main storage ( memory ) that a 
+			program process can use to store data
+		* Thread : a sequence of programmed instructions that can be managed 
+			independently by a scheduler it got its own heap and stack.
+	
+	#See event loop image#
+
+14.Map vs Filter vs ForEach vs Reduce vs Some:-
+	* map:- It is used to iterate an array elements. It doesn't modify exsting array and 
+		for each element it has to retuen a value.
+		Syntax:- array.map(function(currentValue(R), index, arr))
+	* filter:- It is used to iterate an array elements with filter condition. It doesn't 
+	* filter:- It is used to iterate an array elements with filter condition. It doesn't 
+		modify exsting array and for each condition satisfying element it has to retuen 
+		a value.
+		Syntax:- array.filter(function(currentValue(R), index, arr))
+	* forEach:- It is used to just iterate an array elements. It doesn't return any value.
+		Syntax:- array.forEach(function(currentValue(R), index, arr))
+	* reduce:- It is used to reduce to element of array or elements of array of objects 
+		to a single element.
+		Syntax:- array.reduce(function(initialValue or previousValue, currentValue, 
+			currentIndex, arr), initialValue)
+	* some:- It checks if any array elements pass a test. If method returns true 
+		(and stops) if the function returns true for one of the array elements. If 
+		method returns false if the function returns false for all of the array elements.
+		Syntax:- array.some(function(value, index, arr))
