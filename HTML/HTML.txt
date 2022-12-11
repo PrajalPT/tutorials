@@ -1,0 +1,379 @@
+HTML (HyperText Markup Language) is the code that is used to structure a web page and its 
+content. For example, content could be structured within a set of paragraphs, 
+a list of bulleted points, or using images and data tables
+
+HTML 5 Tags
+
+1.<!DOCTYPE html>:- 
+	* All HTML documents must start with a <!DOCTYPE> declaration.
+	* The declaration is not an HTML tag. It is an "information" to the browser about what 
+	  document type to expect.
+	* "html" means type of document is HTML.
+	
+2.<html lang="en">:-
+	* The <html> tag represents the root of an HTML document.
+	* The <html> tag is the container for all other HTML elements
+	* You should always include the "lang" attribute inside the <html> tag, to declare the 
+	  language of the Web page. 
+	  This is meant to assist search engines and browsers.
+	
+3.<head>:-
+	* The <head> element is a container for metadata (data about data) and is placed between 
+	  the <html> tag and the <body> tag.
+	* The following elements can go inside the <head> element:
+		1.<title> (required in every HTML document)
+		2.<style>
+		3.<base>
+		4.<link>
+		5.<meta>
+		6.<script>
+		7.<noscript>
+		
+4.<title>:-
+	* The <title> tag defines the title of the document. The title must be text-only, and 
+	  it is shown in the browser's title bar or in the page's tab.
+	* The contents of a page title is very important for search engine optimization (SEO)! 
+	  The page title is used by search engine algorithms to decide the order when 
+	  listing pages in search results.
+
+5.<style>:-
+	* The <style> tag is used to define style information (CSS) for a document.
+	* Inside the <style> element you specify how HTML elements should render in a browser.
+
+6.<base>:-
+	* The <base> tag specifies the base URL and/or target for all relative URLs in a document.
+	* The <base> tag must have either an href or a target attribute present, or both.
+	* There can only be one single <base> element in a document, and it must be inside the 
+	  <head> element.
+	Attributes:-
+		1.href ==>	URL ==>	Specifies the base URL for all relative URLs in the page.
+		2.target ==> _blank/_self(default) ==> Specifies the default target for all hyperlinks 
+		  and forms in the page.
+	
+7.<link>:-
+	* The <link> tag defines the relationship between the current document and an external 
+	  resource.
+	* The <link> tag is most often used to link to external style sheets or to add a favicon 
+	  to your website.
+	* The <link> element is an empty element, it contains attributes only.
+	e.g <link rel="icon" href="/images/favicon.ico">
+	Attributes:-
+		1.href ==> URL ==> Specifies the location of the linked document.
+		2.rel ==> stylesheet/icon ==> Required. Specifies the relationship between the current
+ 		  document and the linked document.
+	
+8.<meta>:-
+	* The <meta> tag defines metadata about an HTML document. Metadata is data (information) 
+	  about data.
+	* <meta> tags always go inside the <head> element, and are typically used to specify 
+	  character set, page description, keywords, author of the document, and viewport settings.
+	* Metadata will not be displayed on the page, but is machine parsable.
+	Attributes:-
+		1.charset ==> character_set ==>	Specifies the character encoding for the HTML document.
+		2.content ==> text ==> Specifies the value associated with the http-equiv or name 
+		  attribute.
+		3.name ==> application-name/description/keywords ==> Specifies a name for the metadata
+
+9.<script>:-
+	* The <script> tag is used to embed a client-side script (JavaScript).
+	* The <script> element either contains scripting statements, or it points to an external 
+	  script file through the src attribute.
+	Attributes:-
+		1.src ==> URL ==> Specifies the URL of an external script file.
+	
+10.<noscript>:-
+	* The <noscript> tag defines an alternate content to be displayed to users that have 
+	  disabled scripts in their browser or have a browser that doesn't support script.
+	* The <noscript> element can be used in both <head> and <body>.
+
+11.<a>:-
+	* The <a> tag defines a hyperlink, which is used to link from one page to another.
+	* The most important attribute of the <a> element is the href attribute, which indicates 
+	  the link's destination.
+	Attributes:-
+		1.href ==> URL ==> Specifies the URL of the page the link goes to.
+		2.target ==> _blank/self(default) ==> Specifies where to open the linked document.
+	
+12.<audio>:-
+	* The <audio> tag is used to embed sound content in a document, such as music or other 
+	  audio streams.
+	* The <audio> tag contains one or more <source> tags with different audio sources. 
+	  The browser will choose the first source it supports.
+	Attributes:-
+		1.autoplay ==> autoplay==> Specifies that the audio will start playing as soon as it 
+								   is ready.
+		2.controls ==> controls ==> Specifies that audio controls should be displayed.
+		3.loop ==> loop ==> Specifies that the audio will start over again, every time it is 
+							finished.
+		4.muted ==> muted ==> Specifies that the audio output should be muted.
+		5.src ==> URL ==> Specifies the URL of the audio file.
+	
+13.<source>:-
+	* The <source> tag is used to specify multiple media resources for media elements, such 
+	  as <video>, <audio>, and <picture>.
+	Attributes:-
+		1.src ==> URL ==> Required when <source> is used in <audio> and <video>. Specifies 
+						  the URL of the media file.
+		2.type ==> MIME-type ==> Specifies the MIME-type of the resource.
+	
+14.<b>:-
+	* The <b> tag specifies bold text without any extra importance.
+	
+15.<body>:-
+	* The <body> tag defines the document's body.
+	* The <body> element contains all the contents of an HTML document, such as headings, 
+	  paragraphs, images, hyperlinks, tables, lists, etc.
+	
+16.<br>:-
+	* The <br> tag inserts a single line break.
+	* The <br> tag is an empty tag which means that it has no end tag.
+	
+17.<button>:-
+	* The <button> tag defines a clickable button.
+	* Always specify the type attribute for a <button> element, to tell browsers what type 
+	  of button it is.
+	Attributes:-
+		1.disabled ==> disabled ==> Specifies that a button should be disabled.
+		2.name ==> name ==>	Specifies a name for the button.
+		3.type ==> button/submit ==> Specifies the type of button.
+		4.value ==>	text ==> Specifies an initial value for the button.
+		5.onclick ==> function ==> Write a JS code to execute on click of button.
+		
+18.<datalist>:-
+	* The <datalist> tag specifies a list of pre-defined options for an <input> element.
+	* The <datalist> tag is used to provide an "autocomplete" feature for <input> elements. 
+	  Users will see a drop-down list of pre-defined options as they input data.
+	* The <datalist> element's id attribute must be equal to the <input> element's list 
+	  attribute (this binds them together).
+	
+19.<option>:-
+	* The <option> tag defines an option in a select list.
+	* <option> elements go inside a <select>, <optgroup>, or <datalist> element.
+	* The <option> tag can be used without any attributes, but you usually need the value 
+	  attribute, which indicates what is sent to the server on form submission.
+
+20.<div>:-
+	* The <div> tag defines a division or a section in an HTML document.
+	* The <div> tag is easily styled by using the class or id attribute.
+	* By default, browsers always place a line break before and after the <div> element.
+	
+21.<form>:-
+	* The <form> tag is used to create an HTML form for user input.
+	Attributes:-
+		1.action ==> URL ==> Specifies where to send the form-data when a form is submitted.
+		2.method ==> get/post ==> Specifies the HTTP method to use when sending form-data.
+		3.name ==> text ==> Specifies the name of a form.
+
+22.<h1> to <h6>:-
+	* The <h1> to <h6> tags are used to define HTML headings.
+	* <h1> defines the most important heading. <h6> defines the least important heading.
+	
+23.<i>:-
+	* The content inside is typically displayed in italic.
+	
+24.<iframe>:-
+	* The <iframe> tag specifies an inline frame.
+	* An inline frame is used to embed another document within the current HTML document.
+	Attributes:-
+		1.height ==> pixels ==> Specifies the height of an <iframe>. Default height is 150 
+								pixels.
+		2.width ==> pixels ==> Specifies the width of an <iframe>. Default width is 300 pixels.
+		3.src ==> URL ==> Specifies the address of the document to embed in the <iframe>.
+		4.name ==> text ==> Specifies the name of an <iframe>.
+
+25.<img>:-
+	* The <img> tag is used to embed an image in an HTML page.
+	* Also, always specify the width and height of an image. If width and height are not specified, 
+	  the page might flicker while the image loads.
+	Attributes:-
+		1.alt ==> text ==> Specifies an alternate text for an image.
+		2.src ==> URL ==> Specifies the path to the image.
+		3.height ==> pixels ==> Specifies the height of an image.
+		4.width ==> pixels ==> Specifies the width of an image.
+		
+26.<input>:-
+	* The <input> tag specifies an input field where the user can enter data.
+	* The <input> element can be displayed in several ways, depending on the type attribute.
+		<input type="button">
+		<input type="checkbox">
+		<input type="date">
+		<input type="email">
+		<input type="file">
+		<input type="hidden">
+		<input type="image">
+		<input type="number">
+		<input type="password">
+		<input type="radio">
+		<input type="submit">
+		<input type="tel">
+		<input type="text"> (default value)
+	Attributes:-
+		1.accept ==> audio/*,video/*,image/*,media_type ==> Specifies a filter for what file 
+					 types the user can pick from the file input dialog box 
+					 (only for type="file").
+		2.alt ==> text ==> Specifies an alternate text for images (only for type="image").
+		3.checked ==> checked ==> Specifies that an <input> element should be pre-selected 
+								  when the page loads (for type="checkbox" or type="radio").
+		4.disabled ==> disabled ==> Specifies that an <input> element should be disabled.
+		5.height ==> pixels ==> Specifies the height of an <input> element 
+								(only for type="image").
+		6.max ==> number/date ==> Specifies the maximum value for an <input> element.
+		7.maxlength ==> number ==> Specifies the maximum number of characters allowed in an 
+								   <input> element.
+		8.min ==> number/date ==> Specifies a minimum value for an <input> element.
+		9.minlength ==> number ==> Specifies the minimum number of characters required in an 
+								   <input> element.
+		10.multiple ==> multiple ==> Specifies that a user can enter more than one value in an
+									 <input> element for file type.
+		11.name ==> text ==> Specifies the name of an <input> element.
+		12.placeholder ==> text ==> Specifies a short hint that describes the expected value 
+									of an <input> element.
+		13.readonly ==> readonly ==> Specifies that an input field is read-only.
+		14.required ==> required ==> Specifies that an input field must be filled out before 
+									 submitting the form.
+		15.size ==> number ==> Specifies the width, in characters, of an <input> element.
+		16.src ==> URL ==> Specifies the URL of the image to use as a submit button 
+						  (only for type="image").
+		17.type ==> button/checkbox/date/email/file/hidden/image/number/password/radio/submit/
+					tel/text ==> Specifies the type <input> element to display.
+		18.value ==> text ==> Specifies the value of an <input> element.
+		19.width ==> pixels ==> Specifies the width of an <input> element 
+								(only for type="image")
+		20.list ==>	datalist_id	==> Refers to a <datalist> element that contains pre-defined 
+									options for an <input> element
+		21.autofocus ==> autofocus ==> Specifies that a text area should automatically get 
+									   focus when the page loads.
+
+27.<label>:-
+	* The <label> tag defines a label for several elements.
+	* The for attribute of <label> must be equal to the id attribute of the related element 
+	  to bind them together.
+	Attributes:-
+		1.for ==> element_id ==> Specifies the id of the form element the label should be 
+		                         bound to.
+		
+28.<li>:-
+	* The <li> tag defines a list item.
+	* The <li> tag is used inside ordered lists(<ol>), unordered lists (<ul>), and in menu 
+	  lists (<menu>).
+	* In <ul> and <menu>, the list items will usually be displayed with bullet points.
+	* In <ol>, the list items will usually be displayed with numbers or letters.
+	Attributes:-
+		1.value ==> number ==> Only for <ol> lists. Specifies the start value of a list item.
+		
+29.<ol>:-
+	* The <ol> tag defines an ordered list. An ordered list can be numerical or alphabetical.
+	Attributes:-
+		1.reversed ==> reversed ==> Specifies that the list order should be reversed (9,8,7...).
+		2.start ==> number ==> Specifies the start value of an ordered list.
+		3.type ==> 1, A, a, I, i ==> Specifies the kind of marker to use in the list.
+		
+30.<ul>:-
+	* The <ul> tag defines an unordered (bulleted) list.
+	* Use the <ul> tag together with the <li> tag to create unordered lists.
+
+31.<select>:-
+	* The <select> element is used to create a drop-down list.
+	* The name attribute is needed to reference the form data after the form is submitted (if 
+	  you omit the name attribute, no data from the drop-down list will be submitted).
+	* The id attribute is needed to associate the drop-down list with a label.
+	Attributes:-
+		1.disabled ==> disabled ==> Specifies that a drop-down list should be disabled.
+		2.multiple ==> multiple ==> Specifies that multiple options can be selected at once.
+		3.name ==> name ==> Defines a name for the drop-down list.
+		4.required ==> required ==>	Specifies that the user is required to select a value 
+									before submitting the form.
+		5.size ==> number ==> Defines the number of visible options in a drop-down list.
+		
+32.<optgroup>:-
+	* The <optgroup> tag is used to group related options in a <select> element (drop-down 
+	  list).
+	* If you have a long list of options, groups of related options are easier to handle for 
+	  a user.
+	Attributes:-
+		1.disabled ==> disabled ==> Specifies that an option-group should be disabled.
+		2.label ==> text ==> Specifies a label for an option-group.
+		
+33.<p>:-
+	* The <p> tag defines a paragraph.
+	* Browsers automatically add a single blank line before and after each <p> element.
+	
+34.<s>:-
+	* The <s> tag specifies text that is no longer correct, accurate or relevant. The text 
+	  will be displayed with a line through it.
+	* The <s> tag should not be used to define deleted text in a document, use the <del> tag 
+	  for that.
+	
+35.<span>:-
+	* The <span> tag is an inline container used to mark up a part of a text, or a part of a 
+	  document.
+	* The <span> tag is much like the <div> element, but <div> is a block-level element and 
+	  <span> is an inline element.
+	
+36.<del>:-
+	* Use the <del> tag to define deleted text.
+	
+37.<table>:-
+	* The <table> tag defines an HTML table.
+	* An HTML table consists of one <table> element and one or more <tr>, <th>, and <td> 
+	  elements.
+	* The <tr> element defines a table row, the <th> element defines a table header, and 
+	  the <td> element defines a table cell.
+	* An HTML table may also include <thead>, <tfoot>, and <tbody> elements.
+	
+38.<thead>:-
+	* The <thead> tag is used to group header content in an HTML table.
+	* The <thead> element is used in conjunction with the <tbody> and <tfoot> elements to 
+	  specify each part of a table (header, body, footer).
+	* The <thead> element must have one or more <tr> tags inside.
+	
+39.<tbody>:-
+	* The <tbody> tag is used to group the body content in an HTML table.
+	* The <tbody> element must have one or more <tr> tags inside.
+	
+40.<tfoot>:-
+	* The <tfoot> tag is used to group footer content in an HTML table.
+	* The <tfoot> element must have one or more <tr> tags inside.
+	
+41.<th>:-
+	* The <th> tag defines a header cell in an HTML table.
+	* The text in <th> elements are bold and centered by default.
+	
+42.<tr>:-
+	* The <tr> tag defines a row in an HTML table.
+	* A <tr> element contains one or more <th> or <td> elements.
+	
+43.<td>:-
+	* The <td> tag defines a standard data cell in an HTML table.
+	* The text in <td> elements are regular and left-aligned by default.
+	
+44.<textarea>:-
+	* The <textarea> tag defines a multi-line text input control.
+	* The <textarea> element is often used in a form, to collect user inputs like comments 
+	  or reviews.
+	* The name attribute is needed to reference the form data after the form is submitted 
+	  (if you omit the name attribute, no data from the text area will be submitted).
+	* The id attribute is needed to associate the text area with a label. 
+	Attributes:-
+		1.autofocus ==> autofocus ==> Specifies that a text area should automatically get 
+									  focus when the page loads.
+		2.cols ==> number ==> Specifies the visible width of a text area.
+		3.disabled ==> disabled ==> Specifies that a text area should be disabled.
+		4.maxlength ==> number ==> Specifies the maximum number of characters allowed in the 
+								   text area.
+		5.name ==> text ==> Specifies a name for a text area.
+		6.placeholder ==> text ==> Specifies a short hint that describes the expected value 
+								   of a text area.
+		7.readonly ==> readonly ==> Specifies that a text area should be read-only.
+		8.required ==> required ==> Specifies that a text area is required/must be filled out.
+		9.rows ==> number ==> Specifies the visible number of lines in a text area.
+		
+45.<video>:- For self study
+
+46.<!-- -->:-
+	* The comment tag is used to insert comments in the source code. Comments are not displayed
+	  in the browsers.
+	* You can use comments to explain your code, which can help you when you edit the source 
+	  code at a later date. This is especially useful if you have a lot of code.
+	e.g <!--This is a comment. Comments are not displayed in the browser-->
+		<p>This is a paragraph.</p>

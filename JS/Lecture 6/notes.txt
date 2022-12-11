@@ -1,0 +1,97 @@
+15.Math:- The JavaScript Math object allows you to perform mathematical tasks on 
+	numbers.
+	* Math Constants:-
+		Math.E        // returns Euler's number
+		Math.PI       // returns PI
+		Math.SQRT2    // returns the square root of 2
+		Math.SQRT1_2  // returns the square root of 1/2
+		Math.LN2      // returns the natural logarithm of 2
+		Math.LN10     // returns the natural logarithm of 10
+		Math.LOG2E    // returns base 2 logarithm of E
+		Math.LOG10E   // returns base 10 logarithm of E
+	* Math Number to Integer:-
+		Math.round(x)	Returns x rounded to its nearest integer
+		Math.ceil(x)	Returns x rounded up to its nearest integer
+		Math.floor(x)	Returns x rounded down to its nearest integer
+		Math.trunc(x)	Returns the integer part of x (new in ES6)
+	* Math methods:-
+		1. Math.sign(x):- It returns if x is negative, null or positive.
+		2. Math.pow(x, y):- It returns the value of x to the power of y.
+		3. Math.sqrt(x):- It returns the square root of x.
+		4. Math.abs(x):- It returns the absolute (positive) value of x.
+		5. Math.min() and Math.max():- It can be used to find the lowest or highest 
+			value in a list of arguments.
+			
+16.typeof and instanceOf:-
+	* typeof:- You can use the typeof operator to find the data type of a JavaScript 
+		variable.
+		For example:-
+			typeof "John"                 // Returns "string"
+			typeof 3.14                   // Returns "number"
+			typeof NaN                    // Returns "number"
+			typeof false                  // Returns "boolean"
+			typeof [1,2,3,4]              // Returns "object"
+			typeof {name:'John', age:34}  // Returns "object"
+			typeof new Date()             // Returns "object"
+			typeof function () {}         // Returns "function"
+			typeof myCar                  // Returns "undefined" *
+			type                // Returns "object"
+	* instanceOf:- The instanceof operator tests to see if the prototype property of a 
+		constructor appears anywhere in the prototype chain of an object. 
+		The return value is a boolean value.
+		For example:-
+			function Car(make, model, year) {
+			  this.make = make;
+			  this.model = model;
+			  this.year = year;
+			}
+			const auto = new Car('Honda', 'Accord', 1998);
+
+			console.log(auto instanceof Car);
+			// expected output: true
+
+			console.log(auto instanceof Object);
+			// expected output: true
+
+17.DOM(Document Object Model):- When a web page is loaded, the browser creates a Document 
+	Object Model of the page. The HTML DOM model is constructed as a tree of Objects.
+	#Show DOM image#
+	* Finding HTML Elements:-
+		1.document.getElementById(id)			Find an element by element id
+		2.document.getElementsByTagName(name)	Find elements by tag name
+		3.document.getElementsByClassName(name)	Find elements by class name
+	* Changing HTML Elements:-
+		1.element.innerHTML =  new html content	Change the inner HTML of an element
+		2.element.style.property = new style Change the style of an HTML element 
+	* Adding and Deleting Elements:-
+		1.document.createElement(element)	Create an HTML element
+		2.document.removeChild(element)	Remove an HTML element
+		3.document.appendChild(element)	Add an HTML element
+		4.document.replaceChild(new, old)	Replace an HTML element
+		5.document.write(text)	Write into the HTML output stream
+
+18.Object class:- Object is super class of every object in JS.
+	Static methods:-
+		* Object.assign():- Copies the values of all enumerable own properties from one 
+			or more source objects to a target object.
+		* Object.create():- Creates a new object with the specified prototype object and 
+			properties.
+		* Object.entries():- Returns an array containing all of the [key, value] pairs 
+			of a given object's own enumerable string properties.
+		* Object.freeze():- Freezes an object. Other code cannot delete or change its 
+			properties.
+		* Object.fromEntries():- Returns a new object from an iterable of [key, value] 
+			pairs. (This is the reverse of Object.entries).
+		* Object.getPrototypeOf():- Returns the prototype (internal [[Prototype]] 
+			property) of the specified object.
+		* Object.isFrozen():- Determines if an object was frozen.
+		* Object.keys():- Returns an array containing the names of all of the given \
+			object's own enumerable string properties.
+		* Object.values():- Returns an array containing the values that correspond to all
+			of a given object's own enumerable string properties.
+
+	Instance methods:- 
+		* Object.prototype.hasOwnProperty():- Returns a boolean indicating whether an 
+			object contains the specified property as a direct property of that object 
+			and not inherited through the prototype chain.
+		* Object.prototype.toString():- Returns a string representation of the object.
